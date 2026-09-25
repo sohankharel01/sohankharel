@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sohan Kharel — Aspiring Cybersecurity Professional</title>
+  <meta name="description" content="Personal portfolio of Sohan Kharel, aspiring cybersecurity professional and ethical hacker from Nepal. Hands-on labs, security tooling, and technical notes.">
+  <meta name="author" content="Sohan Kharel">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2' ry='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>">
+
+  <!-- Fonts: Syne (Display), DM Sans (Body), DM Mono (Code/Metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="main-body" class="light-mode">
+
+  <!-- Top Technical Status Bar -->
+  <div class="status-bar">
+    <div class="status-left">
+      <span class="status-dot"></span>
+      <span class="status-text">SYSTEM ONLINE</span>
+      <span class="status-sep">//</span>
+      <span class="status-sys">SOHAN_KHAREL.SYS</span>
+    </div>
+    <div class="status-right">
+      <span id="status-clock">00:00:00 UTC</span>
+      <span class="status-sep">//</span>
+      <span>Nepal</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">SK<span>::</span>SEC</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about-sec">ABOUT</a></li>
+        <li><a href="#projects-sec">PROJECTS</a></li>
+        <li><a href="#skills-sec">SKILLS</a></li>
+        <li><a href="#labs-sec">LABS</a></li>
+        <li><a href="#writeups-sec">WRITE-UPS</a></li>
+        <li><a href="#contact-sec">CONTACT</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Sun/Moon Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-btn" aria-label="Open navigation menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Right Section Dot Navigation -->
+  <div id="section-dots" aria-label="Section navigation">
+    <span class="sdot active" data-target="hero" title="Home"></span>
+    <span class="sdot" data-target="about-sec" title="About"></span>
+    <span class="sdot" data-target="projects-sec" title="Projects"></span>
+    <span class="sdot" data-target="skills-sec" title="Skills"></span>
+    <span class="sdot" data-target="labs-sec" title="Labs"></span>
+    <span class="sdot" data-target="writeups-sec" title="Write-ups"></span>
+    <span class="sdot" data-target="contact-sec" title="Contact"></span>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════ -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-eyebrow">ASPIRING CYBERSECURITY PROFESSIONAL</div>
+          <h1 class="hero-name">
+            <span class="name-outline">SOHAN</span>
+            <span class="name-solid">KHAREL</span>
+          </h1>
+
+          <div class="hero-tagline">
+            <span>Web Security</span>
+            <span class="dot">•</span>
+            <span>Network Analysis</span>
+            <span class="dot">•</span>
+            <span>Linux</span>
+            <span class="dot">•</span>
+            <span>Security Automation</span>
+          </div>
+
+          <p class="hero-desc">
+            I'm learning cybersecurity through hands-on labs, security projects, and continuous practice. Focused on understanding real-world attack vectors, defense mechanisms, and foundational computing principles.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#projects-sec" class="btn btn-primary">VIEW PROJECTS &rarr;</a>
+            <a href="#contact-sec" class="btn btn-secondary">CONTACT ME</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num">3+</div>
+              <div class="stat-label">PRACTICAL PROJECTS</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-num">3</div>
+              <div class="stat-label">LAB PLATFORMS</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-num">HANDS-ON</div>
+              <div class="stat-label">ACTIVE LEARNER</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="terminal-frame">
+            <div class="deco-tl"></div>
+            <div class="deco-br"></div>
+            <div class="card-glass-frame">
+              <div class="frame-header">
+                <span class="mac-dot red"></span>
+                <span class="mac-dot yellow"></span>
+                <span class="mac-dot green"></span>
+                <span class="frame-title">sohan@security-lab:~</span>
+              </div>
+              <div class="frame-body">
+                <p class="console-line"><span class="prompt">$</span> whoami</p>
+                <p class="console-output">sohan_kharel</p>
+                <p class="console-line"><span class="prompt">$</span> cat focus.txt</p>
+                <p class="console-output highlight">&gt; Ethical Hacking &amp; Web Defense</p>
+                <p class="console-output highlight">&gt; Network Packet Inspection</p>
+                <p class="console-output highlight">&gt; Python Security Scripting</p>
+                <p class="console-line"><span class="prompt">$</span> status</p>
+                <p class="console-output status-ok">&#10004; Continuous Hands-on Practice</p>
+              </div>
+              <div class="frame-scanline"></div>
+            </div>
+            <div class="photo-label">SOHAN_KHAREL // ID:0x07</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [01] ABOUT
+       ══════════════════════════════════════════ -->
+  <section id="about-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[01]</span>
+          <h2 class="teaser-title">ABOUT</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card about-card">
+          <h3 class="card-hero-name">SOHAN KHAREL</h3>
+          <p class="card-hero-sub">ASPIRING CYBERSECURITY PROFESSIONAL // SECURITY LEARNER</p>
+          <p class="about-p">
+            I am currently building my foundational cybersecurity skills through practical, self-directed learning. Rather than only studying abstract theory, I prioritize hands-on problem solving in virtual lab environments, dissecting network protocols, analyzing web application vulnerabilities, and writing automation scripts.
+          </p>
+          <p class="about-p">
+            My focus is understanding how systems, protocols, and applications work under the hood so I can identify weaknesses ethically and contribute to practical defensive security.
+          </p>
+
+          <div class="pill-group">
+            <span class="tech-pill">ETHICAL HACKING</span>
+            <span class="tech-pill">WEB APP SECURITY</span>
+            <span class="tech-pill">NETWORK DEFENSE</span>
+            <span class="tech-pill">LINUX CLI</span>
+            <span class="tech-pill">PYTHON SCRIPTING</span>
+            <span class="tech-pill">SECURITY AUTOMATION</span>
+          </div>
+
+          <div class="about-info-grid">
+            <div class="info-cell">
+              <span class="info-label">LOCATION</span>
+              <span class="info-val">Nepal</span>
+            </div>
+            <div class="info-cell">
+              <span class="info-label">FIELD</span>
+              <span class="info-val">Cybersecurity</span>
+            </div>
+            <div class="info-cell">
+              <span class="info-label">FOCUS</span>
+              <span class="info-val">Web &amp; Network Security</span>
+            </div>
+            <div class="info-cell">
+              <span class="info-label">OPPORTUNITIES</span>
+              <span class="info-val active-status">Open to Internships &amp; Study Groups ◉</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [02] PROJECTS
+       ══════════════════════════════════════════ -->
+  <section id="projects-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[02]</span>
+          <h2 class="teaser-title">FEATURED PROJECTS</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="glass-card project-card">
+          <div class="project-top">
+            <span class="card-badge active">TOOL</span>
+            <span class="project-category">NETWORK ANALYSIS</span>
+          </div>
+          <h3 class="project-title">⚡ Nmap Network Scanner</h3>
+          <p class="project-desc">
+            A Python-based project for understanding network scanning, port enumeration, and service banner discovery. Uses socket programming and wraps Nmap scans to parse and display structured terminal reports.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">PYTHON</span>
+            <span class="tech-pill">NMAP</span>
+            <span class="tech-pill">SOCKETS</span>
+            <span class="tech-pill">CLI</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW REPO</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="glass-card project-card">
+          <div class="project-top">
+            <span class="card-badge active">TOOL</span>
+            <span class="project-category">AUTOMATION</span>
+          </div>
+          <h3 class="project-title">🛡️ Security Automation Scripts</h3>
+          <p class="project-desc">
+            A curated suite of modular Python and Bash scripts designed to automate repetitive security tasks: parsing authentication logs for failed logins, calculating directory file hashes against baselines, and quick host reachability sweeps.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">PYTHON</span>
+            <span class="tech-pill">BASH</span>
+            <span class="tech-pill">LINUX</span>
+            <span class="tech-pill">AUTOMATION</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW REPO</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="glass-card project-card">
+          <div class="project-top">
+            <span class="card-badge active">LAB</span>
+            <span class="project-category">WEB SECURITY</span>
+          </div>
+          <h3 class="project-title">🌐 Web Security Labs</h3>
+          <p class="project-desc">
+            Hands-on web security exercises completed across intentional vulnerable practice labs. Intercepting HTTP requests with Burp Suite, testing parameter tampering, and observing SQL injection and XSS defenses.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">BURP SUITE</span>
+            <span class="tech-pill">SQLI</span>
+            <span class="tech-pill">XSS</span>
+            <span class="tech-pill">OWASP</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW LAB NOTES</span> &rarr;
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [03] SKILLS / CAPABILITIES
+       ══════════════════════════════════════════ -->
+  <section id="skills-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[03]</span>
+          <h2 class="teaser-title">CAPABILITIES</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="glass-card skill-box">
+          <span class="skill-icon">🌐</span>
+          <h3 class="skill-title">WEB SECURITY</h3>
+          <div class="skill-tags">
+            <span class="tech-pill">OWASP TOP 10</span>
+            <span class="tech-pill">INPUT SANITATION</span>
+            <span class="tech-pill">SQL INJECTION</span>
+            <span class="tech-pill">XSS BASICS</span>
+            <span class="tech-pill">HTTP INSPECTION</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-box">
+          <span class="skill-icon">🔬</span>
+          <h3 class="skill-title">NETWORK ANALYSIS</h3>
+          <div class="skill-tags">
+            <span class="tech-pill">NMAP</span>
+            <span class="tech-pill">WIRESHARK</span>
+            <span class="tech-pill">TCP/IP</span>
+            <span class="tech-pill">PORT SCANNING</span>
+            <span class="tech-pill">DNS &amp; ROUTING</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-box">
+          <span class="skill-icon">🐍</span>
+          <h3 class="skill-title">PROGRAMMING</h3>
+          <div class="skill-tags">
+            <span class="tech-pill">PYTHON 3</span>
+            <span class="tech-pill">BASH SCRIPTING</span>
+            <span class="tech-pill">BASIC C / C++</span>
+            <span class="tech-pill">REGEX</span>
+            <span class="tech-pill">GIT &amp; GITHUB</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-box">
+          <span class="skill-icon">🐧</span>
+          <h3 class="skill-title">SYSTEMS &amp; LINUX</h3>
+          <div class="skill-tags">
+            <span class="tech-pill">KALI LINUX</span>
+            <span class="tech-pill">LINUX CLI</span>
+            <span class="tech-pill">PERMISSIONS</span>
+            <span class="tech-pill">LOG ANALYSIS</span>
+            <span class="tech-pill">SYSTEM ADMIN</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-box">
+          <span class="skill-icon">⚔️</span>
+          <h3 class="skill-title">SECURITY TOOLS</h3>
+          <div class="skill-tags">
+            <span class="tech-pill">BURP SUITE</span>
+            <span class="tech-pill">METASPLOIT BASICS</span>
+            <span class="tech-pill">NETCAT</span>
+            <span class="tech-pill">DIRBUSTER / FFUD</span>
+            <span class="tech-pill">HASHCAT BASICS</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-box">
+          <span class="skill-icon">🧠</span>
+          <h3 class="skill-title">METHODOLOGY</h3>
+          <div class="skill-tags">
+            <span class="tech-pill">RECONNAISSANCE</span>
+            <span class="tech-pill">VULNERABILITY ASSESSMENT</span>
+            <span class="tech-pill">ETHICAL SCOPE</span>
+            <span class="tech-pill">DOCUMENTATION</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [04] LABS & TRAINING
+       ══════════════════════════════════════════ -->
+  <section id="labs-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[04]</span>
+          <h2 class="teaser-title">LABS &amp; TRAINING PLATFORMS</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="labs-grid">
+        <div class="glass-card lab-box">
+          <div class="lab-header">
+            <span class="card-badge active">ACTIVE TRAINING</span>
+            <h3 class="lab-name">TryHackMe</h3>
+          </div>
+          <p class="lab-desc">
+            Completing beginner learning paths covering Linux fundamentals, basic networking, web application security, and entry-level CTFs.
+          </p>
+          <div class="lab-meta-row">
+            <span class="lab-meta-tag">Pre-Security</span>
+            <span class="lab-meta-tag">Web Fundamentals</span>
+          </div>
+          <div class="lab-footer">
+            <a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>PROFILE LINK</span> &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card lab-box">
+          <div class="lab-header">
+            <span class="card-badge active">IN PROGRESS</span>
+            <h3 class="lab-name">PortSwigger Academy</h3>
+          </div>
+          <p class="lab-desc">
+            Practicing in-depth web vulnerabilities directly using Burp Suite: SQL Injection, Cross-Site Scripting (XSS), and authentication flaws.
+          </p>
+          <div class="lab-meta-row">
+            <span class="lab-meta-tag">Apprentice Labs</span>
+            <span class="lab-meta-tag">Burp Suite</span>
+          </div>
+          <div class="lab-footer">
+            <a href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>ACADEMY LINK</span> &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card lab-box">
+          <div class="lab-header">
+            <span class="card-badge active">EARLY PRACTICE</span>
+            <h3 class="lab-name">Hack The Box</h3>
+          </div>
+          <p class="lab-desc">
+            Working through HTB Academy foundational modules to strengthen Linux terminal fluency and methodical host reconnaissance.
+          </p>
+          <div class="lab-meta-row">
+            <span class="lab-meta-tag">HTB Academy</span>
+            <span class="lab-meta-tag">Starting Point</span>
+          </div>
+          <div class="lab-footer">
+            <a href="https://www.hackthebox.com" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>PROFILE LINK</span> &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [05] WRITE-UPS & NOTES
+       ══════════════════════════════════════════ -->
+  <section id="writeups-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[05]</span>
+          <h2 class="teaser-title">STUDY NOTES &amp; WRITE-UPS</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="writeups-list">
+        <div class="glass-card writeup-row">
+          <div class="writeup-main">
+            <div class="writeup-meta">
+              <span class="card-badge">LAB NOTE</span>
+              <span class="writeup-cat">RECONNAISSANCE</span>
+            </div>
+            <h3 class="writeup-title">Nmap Enumeration Notes &amp; Flags</h3>
+            <p class="writeup-desc">
+              Breakdown of TCP SYN stealth scans (-sS) vs connect scans (-sT), service banner discovery (-sV), and default scripting engine usage.
+            </p>
+          </div>
+          <span class="tech-pill">NETWORKING</span>
+        </div>
+
+        <div class="glass-card writeup-row">
+          <div class="writeup-main">
+            <div class="writeup-meta">
+              <span class="card-badge">STUDY NOTE</span>
+              <span class="writeup-cat">LINUX</span>
+            </div>
+            <h3 class="writeup-title">Linux Privilege Escalation Learning Notes</h3>
+            <p class="writeup-desc">
+              Introductory checklist: finding SUID binaries, misconfigured sudo rights, world-writable scripts, and cron task permissions.
+            </p>
+          </div>
+          <span class="tech-pill">LINUX</span>
+        </div>
+
+        <div class="glass-card writeup-row">
+          <div class="writeup-main">
+            <div class="writeup-meta">
+              <span class="card-badge">WALKTHROUGH</span>
+              <span class="writeup-cat">WEB SEC</span>
+            </div>
+            <h3 class="writeup-title">Web Security Lab: Understanding Input Sanitation</h3>
+            <p class="writeup-desc">
+              Why client-side validation can be bypassed easily with request interceptors, and how backend parameterization prevents injection.
+            </p>
+          </div>
+          <span class="tech-pill">WEB APP SEC</span>
+        </div>
+
+        <div class="glass-card writeup-row">
+          <div class="writeup-main">
+            <div class="writeup-meta">
+              <span class="card-badge">REFERENCE</span>
+              <span class="writeup-cat">OWASP</span>
+            </div>
+            <h3 class="writeup-title">OWASP Top 10 Summary &amp; Mitigations</h3>
+            <p class="writeup-desc">
+              Summary of core vulnerabilities (Broken Access Control, Cryptographic Failures, Injection) and their defensive mitigations.
+            </p>
+          </div>
+          <span class="tech-pill">OWASP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [06] CONTACT
+       ══════════════════════════════════════════ -->
+  <section id="contact-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[06]</span>
+          <h2 class="teaser-title">CONTACT</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="contact-tagline">
+            LET'S <span>CONNECT</span><br>OR COLLABORATE
+          </div>
+          <p class="contact-desc">
+            Open to cybersecurity internships, junior roles, collaborative labs, and learning opportunities. Feel free to reach out directly.
+          </p>
+
+          <div class="contact-links-stack">
+            <a href="mailto:sohankharel@example.com" class="contact-pill-link">
+              <span class="c-icon">📧</span>
+              <span class="c-val">sohankharel@example.com</span>
+            </a>
+            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+              <span class="c-icon">🐙</span>
+              <span class="c-val">github.com/sohankharel</span>
+            </a>
+            <a href="https://linkedin.com/in/sohankharel" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+              <span class="c-icon">💼</span>
+              <span class="c-val">linkedin.com/in/sohankharel</span>
+            </a>
+            <a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+              <span class="c-icon">🛡️</span>
+              <span class="c-val">tryhackme.com/p/sohan</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="glass-card contact-avail-box">
+            <div class="avail-indicator">
+              <span class="avail-dot"></span>
+              <span class="avail-text">AVAILABLE FOR OPPORTUNITIES</span>
+            </div>
+            <p class="avail-desc">
+              Currently seeking entry-level security roles, internships, or study groups. Drop a message below and I will get back to you promptly.
+            </p>
+
+            <form id="contact-form" class="simple-contact-form">
+              <div class="form-row">
+                <input type="text" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-row">
+                <input type="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-row">
+                <textarea id="message" rows="4" placeholder="Your Message..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">SEND MESSAGE &rarr;</button>
+              <div id="form-status" class="form-status-msg" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>&copy; <span id="current-year"></span> SOHAN KHAREL</span>
+      <span class="footer-sep">//</span>
+      <span>KATHMANDU, NEPAL</span>
+      <span class="footer-sep">//</span>
+      <span>STAY ETHICAL &bull; KEEP LEARNING</span>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button id="scroll-top-btn" aria-label="Back to top" title="Back to top">&#8593;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
