@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <circle cx="200" cy="180" r="160" fill="url(#glow)"/>
+
+  <!-- Tech Grid Lines -->
+  <g stroke="#334155" stroke-width="0.75" opacity="0.4">
+    <line x1="0" y1="120" x2="400" y2="120"/>
+    <line x1="0" y1="240" x2="400" y2="240"/>
+    <line x1="0" y1="360" x2="400" y2="360"/>
+    <line x1="100" y1="0" x2="100" y2="480"/>
+    <line x1="200" y1="0" x2="200" y2="480"/>
+    <line x1="300" y1="0" x2="300" y2="480"/>
+  </g>
+
+  <!-- Silhouette / Cyber Avatar -->
+  <!-- Head -->
+  <circle cx="200" cy="165" r="62" fill="#1e293b" stroke="url(#accent-grad)" stroke-width="2"/>
+  
+  <!-- Monogram Initials "SK" in Head Center -->
+  <text x="200" y="176" font-family="'Syne', 'Inter', sans-serif" font-size="34" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="2">SK</text>
+
+  <!-- Shoulders / Torso -->
+  <path d="M105 380 C105 270, 295 270, 295 380 Z" fill="#1e293b" stroke="url(#accent-grad)" stroke-width="2"/>
+  
+  <!-- Cyber collar accent -->
+  <path d="M165 285 L200 325 L235 285" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+  <!-- Subtle Shield Overlay Icon -->
+  <path d="M200 65 L250 85 V125 C250 160 200 185 200 185 C200 185 150 160 150 125 V85 Z" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Instruction Badge -->
+  <rect x="50" y="420" width="300" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="200" y="442" font-family="'DM Mono', monospace" font-size="12" fill="#94a3b8" text-anchor="middle" letter-spacing="1">REPLACE WITH photo.png</text>
+</svg>

@@ -8,7 +8,7 @@
   <meta name="author" content="Sohan Kharel">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2' ry='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2' ry='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>">
 
   <!-- Fonts: Syne (Display), DM Sans (Body), DM Mono (Code/Metadata) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,38 +43,62 @@
         <li><a href="#about-sec">ABOUT</a></li>
         <li><a href="#projects-sec">PROJECTS</a></li>
         <li><a href="#skills-sec">SKILLS</a></li>
+        <li><a href="#cert-sec">CERTIFICATES</a></li>
         <li><a href="#labs-sec">LABS</a></li>
         <li><a href="#writeups-sec">WRITE-UPS</a></li>
         <li><a href="#contact-sec">CONTACT</a></li>
       </ul>
 
       <div class="nav-actions">
-        <!-- Sun/Moon Theme Toggle -->
+        <!-- Sun/Moon Theme Toggle with Clean SVG Icons -->
         <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">
-          <span class="theme-icon-light">☀️</span>
-          <span class="theme-icon-dark">🌙</span>
+          <svg class="theme-svg theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-svg theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
         </button>
-        <button class="mobile-menu-btn" id="mobile-btn" aria-label="Open navigation menu">☰</button>
+        <!-- Mobile Menu Toggle Button with Clean SVG -->
+        <button class="mobile-menu-btn" id="mobile-btn" aria-label="Open navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
 
-  <!-- Right Section Dot Navigation -->
+  <!-- Right Section Dot Navigation (Desktop Only) -->
   <div id="section-dots" aria-label="Section navigation">
     <span class="sdot active" data-target="hero" title="Home"></span>
     <span class="sdot" data-target="about-sec" title="About"></span>
     <span class="sdot" data-target="projects-sec" title="Projects"></span>
     <span class="sdot" data-target="skills-sec" title="Skills"></span>
+    <span class="sdot" data-target="cert-sec" title="Certificates"></span>
     <span class="sdot" data-target="labs-sec" title="Labs"></span>
     <span class="sdot" data-target="writeups-sec" title="Write-ups"></span>
     <span class="sdot" data-target="contact-sec" title="Contact"></span>
   </div>
 
   <!-- ══════════════════════════════════════════
-       HERO SECTION
+       HERO SECTION WITH VORONOI MESH CANVAS & 3D AVATAR
        ══════════════════════════════════════════ -->
   <section id="hero" class="hero-section">
-    <div class="container">
+    <!-- Generative Interactive Voronoi Mesh Background Canvas -->
+    <canvas id="voronoi-mesh-canvas" class="voronoi-canvas" aria-hidden="true"></canvas>
+
+    <div class="container hero-container">
       <div class="hero-grid">
         <div class="hero-left">
           <div class="hero-eyebrow">ASPIRING CYBERSECURITY PROFESSIONAL</div>
@@ -94,7 +118,7 @@
           </div>
 
           <p class="hero-desc">
-            I'm learning cybersecurity through hands-on labs, security projects, and continuous practice. Focused on understanding real-world attack vectors, defense mechanisms, and foundational computing principles.
+            I'm learning cybersecurity through hands-on labs, security projects, and continuous practice. Focused on understanding real-world attack vectors, defense mechanisms, and foundational computing principles with mindful focus.
           </p>
 
           <div class="hero-btns">
@@ -104,8 +128,8 @@
 
           <div class="hero-stats">
             <div class="stat-item">
-              <div class="stat-num">3+</div>
-              <div class="stat-label">PRACTICAL PROJECTS</div>
+              <div class="stat-num">6+</div>
+              <div class="stat-label">SECURITY REPOS</div>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
@@ -114,36 +138,20 @@
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <div class="stat-num">HANDS-ON</div>
-              <div class="stat-label">ACTIVE LEARNER</div>
+              <div class="stat-num">NEPAL</div>
+              <div class="stat-label">ORIGIN // 0x07</div>
             </div>
           </div>
         </div>
 
+        <!-- 3D Standalone Cyber Avatar (Free-floating, No enclosing box, No border, No text) -->
         <div class="hero-right">
-          <div class="terminal-frame">
-            <div class="deco-tl"></div>
-            <div class="deco-br"></div>
-            <div class="card-glass-frame">
-              <div class="frame-header">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-                <span class="frame-title">sohan@security-lab:~</span>
-              </div>
-              <div class="frame-body">
-                <p class="console-line"><span class="prompt">$</span> whoami</p>
-                <p class="console-output">sohan_kharel</p>
-                <p class="console-line"><span class="prompt">$</span> cat focus.txt</p>
-                <p class="console-output highlight">&gt; Ethical Hacking &amp; Web Defense</p>
-                <p class="console-output highlight">&gt; Network Packet Inspection</p>
-                <p class="console-output highlight">&gt; Python Security Scripting</p>
-                <p class="console-line"><span class="prompt">$</span> status</p>
-                <p class="console-output status-ok">&#10004; Continuous Hands-on Practice</p>
-              </div>
-              <div class="frame-scanline"></div>
+          <div class="avatar-3d-stage" id="avatar-3d-stage">
+            <div class="avatar-3d-wrapper" id="avatar-3d-wrapper">
+              <div class="avatar-depth-glow" aria-hidden="true"></div>
+              <img src="avatar_transparent.png" alt="Sohan Kharel — 3D Cyber Avatar" class="avatar-3d-img" id="avatar-3d-img">
+              <div class="avatar-specular-light" aria-hidden="true"></div>
             </div>
-            <div class="photo-label">SOHAN_KHAREL // ID:0x07</div>
           </div>
         </div>
       </div>
@@ -198,7 +206,7 @@
             </div>
             <div class="info-cell">
               <span class="info-label">OPPORTUNITIES</span>
-              <span class="info-val active-status">Open to Internships &amp; Study Groups ◉</span>
+              <span class="info-val active-status"><span class="status-dot-inline"></span>Open to Internships &amp; Study Groups</span>
             </div>
           </div>
         </div>
@@ -220,15 +228,108 @@
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1: sohankharelwebsite -->
+        <article class="glass-card project-card">
+          <div class="project-top">
+            <span class="card-badge active">REPO</span>
+            <span class="project-category">TYPESCRIPT / WEB SEC</span>
+          </div>
+          <h3 class="project-title">
+            <svg class="inline-title-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            sohankharelwebsite
+          </h3>
+          <p class="project-desc">
+            Personal cybersecurity platform &amp; interactive portfolio built with TypeScript and modern web tech. Features custom canvas cursor, interactive 3D telemetry, Voronoi mesh generative art, and security lab showcase.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">TYPESCRIPT</span>
+            <span class="tech-pill">HTML5</span>
+            <span class="tech-pill">CSS3</span>
+            <span class="tech-pill">SECURITY UI</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/sohankharel01/sohankharelwebsite" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW GITHUB REPO</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: sohankharel -->
+        <article class="glass-card project-card">
+          <div class="project-top">
+            <span class="card-badge active">REPO</span>
+            <span class="project-category">SECURITY SHOWCASE</span>
+          </div>
+          <h3 class="project-title">
+            <svg class="inline-title-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            sohankharel
+          </h3>
+          <p class="project-desc">
+            Cyber portfolio codebase and offensive security research repository engineered with technical status telemetry, dark/light themes, and responsive layout.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">CSS</span>
+            <span class="tech-pill">JAVASCRIPT</span>
+            <span class="tech-pill">RESPONSIVE</span>
+            <span class="tech-pill">PORTFOLIO</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/sohankharel01/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW GITHUB REPO</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: sohankharel01 Research Hub -->
+        <article class="glass-card project-card">
+          <div class="project-top">
+            <span class="card-badge active">HUB</span>
+            <span class="project-category">OFFENSIVE SEC / RESEARCH</span>
+          </div>
+          <h3 class="project-title">
+            <svg class="inline-title-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            sohankharel01 Research Hub
+          </h3>
+          <p class="project-desc">
+            Central offensive security knowledge hub. Contains documented Burp Suite testing methodologies, Kali Linux configurations, vulnerability research, and security tooling notes.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">OFFENSIVE SEC</span>
+            <span class="tech-pill">BURP SUITE</span>
+            <span class="tech-pill">KALI LINUX</span>
+            <span class="tech-pill">RESEARCH</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/sohankharel01/sohankharel01" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW GITHUB REPO</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Nmap Network Scanner -->
         <article class="glass-card project-card">
           <div class="project-top">
             <span class="card-badge active">TOOL</span>
-            <span class="project-category">NETWORK ANALYSIS</span>
+            <span class="project-category">NETWORK AUDITING</span>
           </div>
-          <h3 class="project-title">⚡ Nmap Network Scanner</h3>
+          <h3 class="project-title">
+            <svg class="inline-title-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Nmap Network Scanner
+          </h3>
           <p class="project-desc">
-            A Python-based project for understanding network scanning, port enumeration, and service banner discovery. Uses socket programming and wraps Nmap scans to parse and display structured terminal reports.
+            Python-based network scanner and port enumerator. Uses raw socket programming and Nmap wrappers to discover live hosts, open ports, and service banners.
           </p>
           <div class="tech-row">
             <span class="tech-pill">PYTHON</span>
@@ -237,19 +338,25 @@
             <span class="tech-pill">CLI</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
-              <span>VIEW REPO</span> &rarr;
+            <a href="https://github.com/sohankharel01" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW ON GITHUB</span> &rarr;
             </a>
           </div>
         </article>
 
-        <!-- Project 2 -->
+        <!-- Project 5: Security Automation Scripts -->
         <article class="glass-card project-card">
           <div class="project-top">
             <span class="card-badge active">TOOL</span>
-            <span class="project-category">AUTOMATION</span>
+            <span class="project-category">AUTOMATION / CLI</span>
           </div>
-          <h3 class="project-title">🛡️ Security Automation Scripts</h3>
+          <h3 class="project-title">
+            <svg class="inline-title-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            Security Automation Scripts
+          </h3>
           <p class="project-desc">
             A curated suite of modular Python and Bash scripts designed to automate repetitive security tasks: parsing authentication logs for failed logins, calculating directory file hashes against baselines, and quick host reachability sweeps.
           </p>
@@ -260,19 +367,28 @@
             <span class="tech-pill">AUTOMATION</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
-              <span>VIEW REPO</span> &rarr;
+            <a href="https://github.com/sohankharel01" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW ON GITHUB</span> &rarr;
             </a>
           </div>
         </article>
 
-        <!-- Project 3 -->
+        <!-- Project 6: Web Security Labs & CTFs -->
         <article class="glass-card project-card">
           <div class="project-top">
             <span class="card-badge active">LAB</span>
             <span class="project-category">WEB SECURITY</span>
           </div>
-          <h3 class="project-title">🌐 Web Security Labs</h3>
+          <h3 class="project-title">
+            <svg class="inline-title-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="22" y1="12" x2="18" y2="12"/>
+              <line x1="6" y1="12" x2="2" y2="12"/>
+              <line x1="12" y1="6" x2="12" y2="2"/>
+              <line x1="12" y1="22" x2="12" y2="18"/>
+            </svg>
+            Web Security Labs &amp; CTFs
+          </h3>
           <p class="project-desc">
             Hands-on web security exercises completed across intentional vulnerable practice labs. Intercepting HTTP requests with Burp Suite, testing parameter tampering, and observing SQL injection and XSS defenses.
           </p>
@@ -283,11 +399,29 @@
             <span class="tech-pill">OWASP</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="link-arrow">
-              <span>VIEW LAB NOTES</span> &rarr;
+            <a href="https://github.com/sohankharel01" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW ON GITHUB</span> &rarr;
             </a>
           </div>
         </article>
+      </div>
+
+      <!-- Live GitHub Telemetry Bar -->
+      <div class="github-sync-banner glass-card">
+        <div class="sync-left">
+          <span class="sync-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </span>
+          <div>
+            <div class="sync-title">GITHUB PROFILE: @sohankharel01</div>
+            <div class="sync-sub">All repositories and offensive security research synced with GitHub</div>
+          </div>
+        </div>
+        <a href="https://github.com/sohankharel01?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          EXPLORE ALL REPOS &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -307,7 +441,13 @@
 
       <div class="skills-grid">
         <div class="glass-card skill-box">
-          <span class="skill-icon">🌐</span>
+          <span class="skill-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </span>
           <h3 class="skill-title">WEB SECURITY</h3>
           <div class="skill-tags">
             <span class="tech-pill">OWASP TOP 10</span>
@@ -319,7 +459,12 @@
         </div>
 
         <div class="glass-card skill-box">
-          <span class="skill-icon">🔬</span>
+          <span class="skill-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              <path d="M10 7v6m-3-3h6"/>
+            </svg>
+          </span>
           <h3 class="skill-title">NETWORK ANALYSIS</h3>
           <div class="skill-tags">
             <span class="tech-pill">NMAP</span>
@@ -331,7 +476,12 @@
         </div>
 
         <div class="glass-card skill-box">
-          <span class="skill-icon">🐍</span>
+          <span class="skill-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </span>
           <h3 class="skill-title">PROGRAMMING</h3>
           <div class="skill-tags">
             <span class="tech-pill">PYTHON 3</span>
@@ -343,7 +493,14 @@
         </div>
 
         <div class="glass-card skill-box">
-          <span class="skill-icon">🐧</span>
+          <span class="skill-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/>
+              <line x1="6" y1="18" x2="6.01" y2="18"/>
+            </svg>
+          </span>
           <h3 class="skill-title">SYSTEMS &amp; LINUX</h3>
           <div class="skill-tags">
             <span class="tech-pill">KALI LINUX</span>
@@ -355,7 +512,15 @@
         </div>
 
         <div class="glass-card skill-box">
-          <span class="skill-icon">⚔️</span>
+          <span class="skill-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="22" y1="12" x2="18" y2="12"/>
+              <line x1="6" y1="12" x2="2" y2="12"/>
+              <line x1="12" y1="6" x2="12" y2="2"/>
+              <line x1="12" y1="22" x2="12" y2="18"/>
+            </svg>
+          </span>
           <h3 class="skill-title">SECURITY TOOLS</h3>
           <div class="skill-tags">
             <span class="tech-pill">BURP SUITE</span>
@@ -367,7 +532,13 @@
         </div>
 
         <div class="glass-card skill-box">
-          <span class="skill-icon">🧠</span>
+          <span class="skill-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </span>
           <h3 class="skill-title">METHODOLOGY</h3>
           <div class="skill-tags">
             <span class="tech-pill">RECONNAISSANCE</span>
@@ -381,13 +552,214 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       [04] LABS & TRAINING
+       [04] CERTIFICATES & BADGES
+       ══════════════════════════════════════════ -->
+  <section id="cert-sec" class="section-teaser">
+    <div class="container">
+      <div class="teaser-header">
+        <div class="teaser-title-group">
+          <span class="teaser-tag">[04]</span>
+          <h2 class="teaser-title">CERTIFICATES &amp; BADGES</h2>
+          <div class="teaser-line"></div>
+        </div>
+      </div>
+
+      <div class="certs-grid">
+        <!-- Badge 1: TryHackMe Pre-Security -->
+        <article class="glass-card cert-card">
+          <div class="cert-header">
+            <div class="cert-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="cert-badges">
+              <span class="card-badge active">VERIFIED BADGE</span>
+              <span class="cert-issuer">TryHackMe</span>
+            </div>
+          </div>
+          <h3 class="cert-title">Pre-Security Learning Path</h3>
+          <p class="cert-desc">
+            Foundational certification covering network fundamentals, TCP/IP, OSI model, web architecture, and Linux/Windows operating system security.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">NETWORKING</span>
+            <span class="tech-pill">LINUX</span>
+            <span class="tech-pill">WINDOWS</span>
+            <span class="tech-pill">TCP/IP</span>
+          </div>
+          <div class="cert-footer">
+            <a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VERIFY BADGE</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Badge 2: TryHackMe Web Fundamentals -->
+        <article class="glass-card cert-card">
+          <div class="cert-header">
+            <div class="cert-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="cert-badges">
+              <span class="card-badge active">ACTIVE TRAINING</span>
+              <span class="cert-issuer">TryHackMe</span>
+            </div>
+          </div>
+          <h3 class="cert-title">Web Fundamentals Path</h3>
+          <p class="cert-desc">
+            Hands-on web penetration testing path covering Burp Suite interception, authentication bypasses, directory fuzzing, and OWASP Top 10 vulnerabilities.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">BURP SUITE</span>
+            <span class="tech-pill">OWASP</span>
+            <span class="tech-pill">WEB EXPLOITATION</span>
+          </div>
+          <div class="cert-footer">
+            <a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>VIEW CREDENTIAL</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Badge 3: PortSwigger Academy -->
+        <article class="glass-card cert-card">
+          <div class="cert-header">
+            <div class="cert-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <div class="cert-badges">
+              <span class="card-badge active">PRACTITIONER</span>
+              <span class="cert-issuer">PortSwigger</span>
+            </div>
+          </div>
+          <h3 class="cert-title">Web Security Academy</h3>
+          <p class="cert-desc">
+            Rigorous hands-on labs by PortSwigger covering SQL Injection, Cross-Site Scripting (XSS), CSRF, access control flaws, and input validation defenses.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">SQLI</span>
+            <span class="tech-pill">XSS</span>
+            <span class="tech-pill">ACCESS CONTROL</span>
+          </div>
+          <div class="cert-footer">
+            <a href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>ACADEMY PROFILE</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Badge 4: Hack The Box Academy -->
+        <article class="glass-card cert-card">
+          <div class="cert-header">
+            <div class="cert-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <div class="cert-badges">
+              <span class="card-badge active">TIER BADGE</span>
+              <span class="cert-issuer">Hack The Box</span>
+            </div>
+          </div>
+          <h3 class="cert-title">HTB Academy: Linux &amp; Recon</h3>
+          <p class="cert-desc">
+            Foundational modules focusing on Linux command-line fluency, process monitoring, file system hierarchy, network service auditing, and host enumeration.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">HTB ACADEMY</span>
+            <span class="tech-pill">LINUX CLI</span>
+            <span class="tech-pill">RECON</span>
+          </div>
+          <div class="cert-footer">
+            <a href="https://www.hackthebox.com" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>HTB PROFILE</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Badge 5: Cisco Networking Academy -->
+        <article class="glass-card cert-card">
+          <div class="cert-header">
+            <div class="cert-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div class="cert-badges">
+              <span class="card-badge">IN PROGRESS</span>
+              <span class="cert-issuer">Cisco NetAcad</span>
+            </div>
+          </div>
+          <h3 class="cert-title">Junior Cybersecurity Analyst</h3>
+          <p class="cert-desc">
+            Comprehensive curriculum covering security operations, threat classification, packet analysis, cryptography fundamentals, and defense-in-depth architecture.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">CISCO</span>
+            <span class="tech-pill">DEFENSE-IN-DEPTH</span>
+            <span class="tech-pill">THREAT DEFENSE</span>
+          </div>
+          <div class="cert-footer">
+            <a href="https://www.netacad.com" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>ROADMAP</span> &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Badge 6: CompTIA Security+ Pathway -->
+        <article class="glass-card cert-card">
+          <div class="cert-header">
+            <div class="cert-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+            </div>
+            <div class="cert-badges">
+              <span class="card-badge">CANDIDATE</span>
+              <span class="cert-issuer">CompTIA</span>
+            </div>
+          </div>
+          <h3 class="cert-title">Security+ (SY0-701) Roadmap</h3>
+          <p class="cert-desc">
+            Active preparation targeting global industry standard in baseline cybersecurity skills: threats, attacks, vulnerability management, identity, and risk mitigation.
+          </p>
+          <div class="tech-row">
+            <span class="tech-pill">SECURITY+</span>
+            <span class="tech-pill">RISK MGMT</span>
+            <span class="tech-pill">VULNERABILITY AUDIT</span>
+          </div>
+          <div class="cert-footer">
+            <a href="https://www.comptia.org/certifications/security" target="_blank" rel="noopener noreferrer" class="link-arrow">
+              <span>TARGET CERT</span> &rarr;
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       [05] LABS & TRAINING
        ══════════════════════════════════════════ -->
   <section id="labs-sec" class="section-teaser">
     <div class="container">
       <div class="teaser-header">
         <div class="teaser-title-group">
-          <span class="teaser-tag">[04]</span>
+          <span class="teaser-tag">[05]</span>
           <h2 class="teaser-title">LABS &amp; TRAINING PLATFORMS</h2>
           <div class="teaser-line"></div>
         </div>
@@ -455,13 +827,13 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       [05] WRITE-UPS & NOTES
+       [06] WRITE-UPS & NOTES
        ══════════════════════════════════════════ -->
   <section id="writeups-sec" class="section-teaser">
     <div class="container">
       <div class="teaser-header">
         <div class="teaser-title-group">
-          <span class="teaser-tag">[05]</span>
+          <span class="teaser-tag">[06]</span>
           <h2 class="teaser-title">STUDY NOTES &amp; WRITE-UPS</h2>
           <div class="teaser-line"></div>
         </div>
@@ -528,13 +900,13 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       [06] CONTACT
+       [07] CONTACT
        ══════════════════════════════════════════ -->
   <section id="contact-sec" class="section-teaser">
     <div class="container">
       <div class="teaser-header">
         <div class="teaser-title-group">
-          <span class="teaser-tag">[06]</span>
+          <span class="teaser-tag">[07]</span>
           <h2 class="teaser-title">CONTACT</h2>
           <div class="teaser-line"></div>
         </div>
@@ -546,25 +918,52 @@
             LET'S <span>CONNECT</span><br>OR COLLABORATE
           </div>
           <p class="contact-desc">
-            Open to cybersecurity internships, junior roles, collaborative labs, and learning opportunities. Feel free to reach out directly.
+            Open to cybersecurity internships, junior roles, collaborative labs, and learning opportunities. Connect directly on WhatsApp or social profiles.
           </p>
 
           <div class="contact-links-stack">
-            <a href="mailto:sohankharel@example.com" class="contact-pill-link">
-              <span class="c-icon">📧</span>
-              <span class="c-val">sohankharel4@gmail.com</span>
+            <!-- WhatsApp Direct Action Pill -->
+            <a href="https://wa.me/9779800000000?text=Hi%20Sohan,%20I%20saw%20your%20cybersecurity%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="contact-pill-link whatsapp-pill">
+              <span class="c-icon whatsapp-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </span>
+              <span class="c-val">WhatsApp // Direct Message</span>
             </a>
-            <a href="https://github.com/sohankharel" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
-              <span class="c-icon">🐙</span>
-              <span class="c-val">github.com/sohankharel01/</span>
+            <a href="https://github.com/sohankharel01" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+              <span class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </span>
+              <span class="c-val">github.com/sohankharel01</span>
             </a>
-            <a href="https://linkedin.com/in/sohankharel" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
-              <span class="c-icon">💼</span>
-              <span class="c-val">linkedin.com/in/sohan-kharel-b42a41316/</span>
+            <a href="https://linkedin.com/in/sohan-kharel-b42a41316" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+              <span class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </span>
+              <span class="c-val">linkedin.com/in/sohan-kharel</span>
+            </a>
+            <a href="https://instagram.com/sohankharel01" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+              <span class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </span>
+              <span class="c-val">instagram.com/sohankharel01</span>
             </a>
             <a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
-              <span class="c-icon">🛡️</span>
-              <span class="c-val">tryhackme.com/p/sohankharel01/</span>
+              <span class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </span>
+              <span class="c-val">tryhackme.com/p/sohan</span>
             </a>
           </div>
         </div>
@@ -576,7 +975,7 @@
               <span class="avail-text">AVAILABLE FOR OPPORTUNITIES</span>
             </div>
             <p class="avail-desc">
-              Currently seeking entry-level security roles, internships, or study groups. Drop a message below and I will get back to you promptly.
+              Currently seeking entry-level security roles, internships, or study groups. Send a message directly to WhatsApp below:
             </p>
 
             <form id="contact-form" class="simple-contact-form">
@@ -584,12 +983,14 @@
                 <input type="text" id="name" placeholder="Your Name" required>
               </div>
               <div class="form-row">
-                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="email" id="email" placeholder="Your Email / Organization" required>
               </div>
               <div class="form-row">
                 <textarea id="message" rows="4" placeholder="Your Message..." required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-full">SEND MESSAGE &rarr;</button>
+              <button type="submit" class="btn btn-primary btn-full whatsapp-btn">
+                <span>SEND VIA WHATSAPP</span> &rarr;
+              </button>
               <div id="form-status" class="form-status-msg" aria-live="polite"></div>
             </form>
           </div>
@@ -603,7 +1004,7 @@
     <div class="container footer-content">
       <span>&copy; <span id="current-year"></span> SOHAN KHAREL</span>
       <span class="footer-sep">//</span>
-      <span>HETAUDA, NEPAL</span>
+      <span>KATHMANDU, NEPAL</span>
       <span class="footer-sep">//</span>
       <span>STAY ETHICAL &bull; KEEP LEARNING</span>
     </div>
@@ -615,4 +1016,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-    
